@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $nombreRuta = 'landing';
+
+    return view('welcome')->with('ruta',$nombreRuta);
 });
 
 Route::get('/home', function () {
     return view('home');
 })->middleware('auth');
+
+Route::get('/nosotros', function () {
+    $nombreRuta = 'nosotros';
+    return view('nosotros')->with('ruta',$nombreRuta);
+});
+
+Route::get('/profesor', function () {
+    $nombreRuta = 'profesor';
+    return view('profesor')->with('ruta',$nombreRuta);
+});
+Route::get('/metodologia', function () {
+    $nombreRuta = 'metodologia';
+    return view('metodologia')->with('ruta',$nombreRuta);
+});
