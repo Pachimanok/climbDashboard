@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <input id="password-confirm" type="password" class="form-control"
-                                        placeholder="Repetir Password" name="password" name="password_confirmation"
+                                        placeholder="Repetir Password" name="password_confirmation"
                                         required autocomplete="new-password" aria-label="Password"
                                         aria-describedby="password-addon">
                                 </div>

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Request;
+use App\Models\MensajeWeb;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,12 +17,13 @@ use Illuminate\Support\Facades\Request;
 
 Route::get('/', function () {
     $nombreRuta = 'landing';
-
     return view('welcome')->with('ruta',$nombreRuta);
 });
 
 Route::get('/home', function () {
-    return view('home');
+    
+    $mensajeWeb = MensajeWeb::all();
+    return view('home')->with('mensajeWeb',$mensajeWeb);
 })->middleware('auth');
 
 Route::get('/nosotros', function () {
@@ -36,3 +39,5 @@ Route::get('/metodologia', function () {
     $nombreRuta = 'metodologia';
     return view('metodologia')->with('ruta',$nombreRuta);
 });
+
+Route::resource('mensajeWeb','App\Http\Controllers\mensajeWebController');
