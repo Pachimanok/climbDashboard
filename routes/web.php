@@ -1,8 +1,11 @@
 <?php
 
+use App\Models\curso;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Request;
 use App\Models\MensajeWeb;
+use App\Models\profesor;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +19,15 @@ use App\Models\MensajeWeb;
 */
 
 Route::get('/', function () {
+
+    
+    $cursos = DB::table('cursos')->orderByDesc('priority')->take(8)->get();
+    $profesores = DB::table('profesors')->orderByDesc('priority')->take(8)->get();
+
+
+
     $nombreRuta = 'landing';
-    return view('welcome')->with('ruta',$nombreRuta);
+    return view('welcome')->with('ruta',$nombreRuta)->with('profesores',$profesores)->with('cursos',$cursos);
 });
 
 Route::get('/home', function () {
@@ -41,3 +51,8 @@ Route::get('/metodologia', function () {
 });
 
 Route::resource('mensajeWeb','App\Http\Controllers\mensajeWebController');
+Route::resource('profesor','App\Http\Controllers\ProfesorController');
+Route::resource('cursos','App\Http\Controllers\CursoController');
+Route::resource('descargar','App\Http\Controllers\descargasProgramaController');
+
+
