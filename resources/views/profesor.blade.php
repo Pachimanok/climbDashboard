@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/assets/img/apple-icon.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('assets/assets/img/favicon.png') }}">
     <title>
-        CLIMB :: Nuestra Historia
+        CLIMB :: Profesor
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="col-sm-4 text-center">
                         <img class="avatar avatar-xxl shadow-xl position-relative z-index-2"
-                            src="{{ asset('assets/assets/img/climb/' . $profesor->foto) }}"
+                            src="{{ asset('assets/img/profesores/' . $profesor->foto) }}"
                             style="height: 25rem !important; width: 25rem !important;" alt="bruce" loading="lazy">
                         <div class="d-block mt-5">
                             <a href="{{ $profesor->linkedin }}" target="_blank"
@@ -71,7 +71,8 @@
                                 </div>
                             </div>
                             <p class="text-lg mb-0">
-                                {{ $profesor->introduccion }}
+                                @php echo $profesor->introduccion @endphp
+                              
                             </p>
                             <br>
                             <div class="text-sm mb-0">

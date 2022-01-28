@@ -22,7 +22,7 @@
                         <div class="card-header p-0 position-relative" style="background:transparent;">
                             <h6 class="text-center text-info text-uppercase">{{ $curso->tipo }}</h6>
                             <a class="d-block blur-shadow-image">
-                                <img src="{{ asset('assets/assets/img/climb/' . $curso->imagen) }}"
+                                <img src="{{ asset('assets/img/cursos/' . $curso->imagen) }}"
                                     alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy">
                             </a>
                         </div>
@@ -31,7 +31,7 @@
                                 <a href="javascript:;" class="text-dark font-weight-bold">{{ $curso->titulo }}</a>
                             </h5>
                             <p>
-                                {{ $curso->descripcion_corta }}
+                               @php echo $curso->descripcion_corta @endphp
                             </p>
                             <a href="/cursos/{{ $curso->id }}" class="text-info text-sm icon-move-right">saber
                                 más

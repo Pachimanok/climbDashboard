@@ -26,7 +26,7 @@
                                 class="card-header p-0 position-relative mt-4 mx-3
                             z-index-2">
                                 <a class="d-block blur-shadow-image">
-                                    <img src="{{ asset('assets/assets/img/climb/' . $profesor->foto) }}"
+                                    <img src="{{ asset('assets/img/profesores/' . $profesor->foto) }}"
                                         alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
                                 </a>
                                 <div class="colored-shadow"

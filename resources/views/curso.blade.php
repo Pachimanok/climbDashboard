@@ -23,7 +23,7 @@
   @include('sections.navbar')
   <!-- -------- START HEADER 7 w/ text and video ------- -->
   <header class="bg-gradient-dark">
-    <div class="page-header min-vh-75" style="background-image: url('{{ asset('assets/assets/img/climb/' . $curso->imagen) }}');">
+    <div class="page-header min-vh-75" style="background-image: url('{{ asset('assets/img/cursos/' . $curso->imagen) }}');">
       <span class="mask bg-gradient-dark opacity-6"></span>
       <div class="container">
         <div class="row justify-content-center" style="margin-top: 18rem;">

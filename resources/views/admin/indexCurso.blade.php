@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <title>
-        Soft UI Dashboard by Creative Tim
+        CLIMB Dashboard :: {{ $ruta }}
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -24,216 +24,142 @@
 <body class="g-sidenav-show  bg-gray-100">
     @include('layouts.aside')
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
-
         <div class="container-fluid py-4">
-            <div class="row">
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Descargas Programas.
-                                        </p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            {{ $descarga}}
-                                            <span class="text-success text-sm font-weight-bolder">+  {{ $semana }} esta semana</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Visitas Nosotros</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            70
-                                            <span class="text-success text-sm font-weight-bolder">+14 hoy</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">New Clients</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            +3,462
-                                            <span class="text-danger text-sm font-weight-bolder">-2%</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            $103,430
-                                            <span class="text-success text-sm font-weight-bolder">+5%</span>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            @if (session('message'))
+ <div class="row">
+     <div class="col-sm-8 mx-auto">
+        <div class="alert alert-info text-white alert-dismissible fade show" role="alert">
+            {{ session('message') }}
+            <button type="button" class="btn-close align-top" data-bs-dismiss="alert" aria-label="Close" style="color:white;"><span class="align-top" aria-hidden="true">&times;</span>  </button>
+        </div>  
+     </div>
+ </div>           
+@endif
+            @php
+                
+                if (isset($_GET['not'])) {
+                    if ($_GET['not'] === 'deleteok') {
+                        echo '<div class="alert alert-secondary text-white alert-dismissible fade show" role="alert">
+                                <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                                <span class="alert-text"><strong>¡Se eliminó</strong> el mensaje correctamente!</span>
+                                <button type="button" class="btn-close" onClick="reload();">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>';
+                    }
+                }
+                
+            @endphp
+            <script>
+                function reload() {
+                    var getUrl = window.location.origin + '/home';
+                    window.location = getUrl;
+                }
+            </script>
             <div class="row my-4">
-                <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
-                    <div class="card">
-                        <div class="card-header pb-0">
+                <div class="col-lg-10 col-md-8 mb-md-0 mb-4  mx-auto">
+                    <div class="card p-3">
+                        <div class="card-header pb-0 bg-gray-200">
                             <div class="row">
-                                <div class="col-lg-6 col-7">
-                                    <h6>Consultas desde formularios</h6>
-                                    @php
-                                        
-                                        if (isset($_GET['not'])) {
-
-                                            if ($_GET['not'] === 'deleteok') {
-
-                                                echo '<div class="alert alert-secondary text-white alert-dismissible fade show" role="alert">
-                                                          <span class="alert-icon"><i class="ni ni-like-2"></i></span>
-                                                          <span class="alert-text"><strong>¡Se eliminó</strong> el mensaje correctamente!</span>
-                                                          <button type="button" class="btn-close" onClick="reload();">
-                                                              <span aria-hidden="true">&times;</span>
-                                                          </button>
-                                                      </div>';
-                                            }
-                                        }
-                                        
-                                    @endphp
-                                    <script>
-                                      
-                                      function reload(){
-                                      var getUrl = window.location.origin +'/home';
-                                      window.location = getUrl;
-                                      }
-                                    </script>
-                                   {{--  <p class="text-sm mb-0">
-                                        <i class="fa fa-check text-info" aria-hidden="true"></i>
-                                        <span class="font-weight-bold ms-1">30 </span> ese mes.
-                                    </p> --}}
+                                <div class="col-lg-6 col-7 mx-auto text-center">
+                                    <h4>Cursos</h4>
                                 </div>
-                                {{-- <div class="col-lg-6 col-5 my-auto text-end">
-                  <div class="dropdown float-lg-end pe-4">
-                    <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa fa-ellipsis-v text-secondary"></i>
-                    </a>
-                    <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
-                      <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                      <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                      <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
-                    </ul>
-                  </div>
-                </div> --}}
                             </div>
                         </div>
                         <div class="card-body px-0 pb-2">
                             <div class="table-responsive">
-                                <table class="table align-items-center mb-0">
+                                <div class="row">
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control pull-right" id="search"
+                                            placeholder="Buscar Curso">
+                                           
+                                    </div>
+                                    <div class="col-sm-3 text-center">
+                                        <a href="cursosAdmin/create" class="btn btn-primary">Crear Curso</a>
+                                    </div>
+                                </div>
+                                <span class="counter pull-right"></span>
+                                <table class="table align-items-center mb-0 results"
+                                    class="table-bordered table pull-right" id="mytable" cellspacing="0"
+                                    style="width: 100%;">
                                     <thead>
                                         <tr>
+                                            <th></th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Asunto</th>
+                                                ID</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Nombre y Apellido.</th>
+                                                Titulo</th>
                                             <th
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Mail.</th>
+                                                tipo</th>
                                             <th
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Celular</th>
+                                                horarios</th>
+                                                <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                               descuentos</th>
 
                                             <th
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Accion.</th>
+                                                Accion</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($mensajeWeb as $mensajeWeb)
-                                            <tr>
+                                        @php $i =  0; @endphp
+                                        @foreach ($cursos as $curso)
+                                        @php $i = $i + 1;@endphp
+                                      
+                                            <tr  @if($curso->priority == '1')class="text-info" @endif @php if($i == 8){ echo 'style="border: salmon;"'; } @endphp  >
                                                 <td>
-                                                    <div class="d-flex ">
-                                                        <h6 class="mb-0 text-sm text-truncate">{{ $mensajeWeb->asunto }}
-                                                        </h6>
-                                                    </div>
+                                                    
+                                                    <span class="text-xs font-weight-bold text-center" style="color:gray;"> <small> {{$i}}</small></span>
+
+
                                                 </td>
                                                 <td>
-                                                    <h6 class="mb-0 text-sm text-truncate">{{ $mensajeWeb->nombre }}
-                                                    </h6>
+                                                    
+                                                    <span class="text-xs font-weight-bold text-center">
+                                                        {{ $curso->id }} </span>
+
+                                                </td>
+                                                <td>
+                                                    <span class="text-xs font-weight-bold text-truncate">{{ $curso->titulo }}
+                                                    </span>
                                                 </td>
                                                 <td class="align-middle text-center text-sm">
                                                     <span class="text-xs font-weight-bold">
-                                                        {{ $mensajeWeb->email }}</span>
+                                                        {{ $curso->tipo }}</span>
                                                 </td>
                                                 <td class="align-middle text-center text-sm">
                                                     <span class="text-xs font-weight-bold">
-                                                        {{ $mensajeWeb->celular }}</span>
+                                                        {{ $curso->horario }}</span>
                                                 </td>
+                                                <td class="align-middle text-center text-sm">
+                                                    <span class="text-xs font-weight-bold">
+                                                        {{ $curso->aplica_descuento }}</span>
+                                                </td>
+
                                                 <td class="align-middle text-center">
                                                     <div class="btn-group">
-                                                        <a href="mensajeWeb/{{ $mensajeWeb->id }}" title="Ver Mensaje"
+                                                        <a href="/cursosAdmin/{{ $curso->id }}"
+                                                            title="Ver Mensaje"
                                                             class="pb-0 pl-1 pr-1 border-white btn-outline-info"><i
                                                                 class="fas fa-eye p-2"></i></a>
-                                                        <a href="mailto:{{ $mensajeWeb->email }}?Subject=Contacto%20CLIMB::Escuela%20de%20Recursos%20Humanos."
-                                                            title="Enviar Mail"
+                                                        <a href="/cursosAdmin/{{ $curso->id }}/edit"
+                                                            title="Ver Mensaje"
                                                             class="pb-0 pl-1 pr-1 border-white btn-outline-info"><i
-                                                                class="far fa-envelope p-2"></i></a>
-                                                        <a href="https://api.whatsapp.com/send?phone=+549{{ $mensajeWeb->celular }}"
-                                                            target="_blank" title="Enviar WhatsApp"
-                                                            class="pb-0 pl-1 pr-1 border-white btn-outline-info"><i
-                                                                class="fab fa-whatsapp p-2"></i></a>
-                                                        <form action="mensajeWeb/{{ $mensajeWeb->id }}" method="POST">
+                                                                class="fas fa-pen-alt"></i></a>
+
+
+                                                        <form action="/cursosAdmin/{{ $curso->id }}"
+                                                            method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit"
-                                                                onclick="return confirm('¿Quieres eliminar este mensaje?')"
+                                                                onclick="return confirm('¿Quieres eliminar este curso?')"
                                                                 title="Eliminar"
                                                                 class="btn p-0 mb-0 border-white btn-outline-info"><i
                                                                     class="far fa-trash-alt p-2"></i></button>
@@ -247,79 +173,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header pb-0">
-                            <h6>Orders overview</h6>
-                            <p class="text-sm">
-                                <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
-                                <span class="font-weight-bold">24%</span> this month
-                            </p>
-                        </div>
-                        <div class="card-body p-3">
-                            <div class="timeline timeline-one-side">
-                                <div class="timeline-block mb-3">
-                                    <span class="timeline-step">
-                                        <i class="ni ni-bell-55 text-success text-gradient"></i>
-                                    </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">$2400, Design changes</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">22 DEC 7:20 PM</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-block mb-3">
-                                    <span class="timeline-step">
-                                        <i class="ni ni-html5 text-danger text-gradient"></i>
-                                    </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">New order #1832412</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 11 PM</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-block mb-3">
-                                    <span class="timeline-step">
-                                        <i class="ni ni-cart text-info text-gradient"></i>
-                                    </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">Server payments for April
-                                        </h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 9:34 PM</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-block mb-3">
-                                    <span class="timeline-step">
-                                        <i class="ni ni-credit-card text-warning text-gradient"></i>
-                                    </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order
-                                            #4395133</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">20 DEC 2:20 AM</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-block mb-3">
-                                    <span class="timeline-step">
-                                        <i class="ni ni-key-25 text-primary text-gradient"></i>
-                                    </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">Unlock packages for
-                                            development</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">18 DEC 4:54 AM</p>
-                                    </div>
-                                </div>
-                                <div class="timeline-block">
-                                    <span class="timeline-step">
-                                        <i class="ni ni-money-coins text-dark text-gradient"></i>
-                                    </span>
-                                    <div class="timeline-content">
-                                        <h6 class="text-dark text-sm font-weight-bold mb-0">New order #9583120</h6>
-                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17 DEC</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
+
             <footer class="footer pt-3  ">
                 <div class="container-fluid">
                     <div class="row align-items-center justify-content-lg-between">
@@ -329,8 +185,8 @@
                                     document.write(new Date().getFullYear())
                                 </script>,
                                 made with <i class="fa fa-heart"></i> by
-                                <a href="https://www.creative-tim.com" class="font-weight-bold"
-                                    target="_blank">Creative Tim</a>
+                                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative
+                                    Tim</a>
                                 for a better web.
                             </div>
                         </div>
@@ -630,6 +486,24 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+
+    {{-- script buscador --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        // Write on keyup event of keyword input element
+        $(document).ready(function() {
+            $("#search").keyup(function() {
+                _this = this;
+                // Show only matching TR, hide rest of them
+                $.each($("#mytable tbody tr"), function() {
+                    if ($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+                        $(this).hide();
+                    else
+                        $(this).show();
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
