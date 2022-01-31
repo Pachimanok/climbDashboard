@@ -5,8 +5,7 @@
             <div class="col-md-8 text-start mb-0 mt-5">
                 <h3 class="text-white z-index-1 position-relative">Nuestros
                     Profesores</h3>
-                <p class="text-white opacity-8 mb-0"> Profesionales de Recursos
-                    Humanos te enseñamos nuestras claves de éxito</p>
+                <p class="text-white opacity-8 mb-0"> Nuestros profesores, son profesionales expertos en la gestión de Recursos Humanos, que buscan compartir saberes sin límites y sin reservas</p>
             </div>
             <div class="col-sm-4 mb-0 mt-5 text-center">
               

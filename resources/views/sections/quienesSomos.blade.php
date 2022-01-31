@@ -5,10 +5,7 @@
     <div class="row">
       <div class="col-lg-6 my-auto">
         <h3>¿Quiénes somos?</h3>
-        <p class="pe-5">Pain is what we go through as we become older.
-          We get insulted by others, lose trust for those others. We get
-          back stabbed by friends. It becomes harder for us to give
-          others a hand.</p>
+        <p class="pe-5">Nuestros profesores, son expertos profesionales en la gestión de recursos humanos que prestan servicios para reconocidas empresas privadas.</p>
         <a href="/nosotros" class="text-primary icon-move-right">Saber más
           <i class="fas fa-arrow-right text-sm ms-1"></i>
         </a>
@@ -20,8 +17,7 @@
             <i class="fas fa-archive opacity-10"></i>
           </div>
           <div class="description ps-3">
-            <p class="mb-0">It becomes harder for us to give others a
-              hand. <br> We get our heart broken by people we love.</p>
+            <p class="mb-0">Creemos en una educación basada en la libertad de las personas, que les permita desafiar el status quo establecido</p>
           </div>
         </div>
 
@@ -31,8 +27,7 @@
             <i class="fas fa-handshake opacity-10"></i>
           </div>
           <div class="description ps-3">
-            <p class="mb-0">As we live, our hearts turn colder. <br>Cause
-              pain is what we go through as we become older.</p>
+            <p class="mb-0">Cada vez más empresas en el mundo, dejan de exigir a sus colaboradores un título Universitario oficial para validar habilidades y experiencia en la gestión de Recursos Humanos. </p>
           </div>
         </div>
         <div class="p-3 info-horizontal">
@@ -41,8 +36,7 @@
             <i class="fas fa-award opacity-10"></i>
           </div>
           <div class="description ps-3">
-            <p class="mb-0">When we lose family over time. <br> What
-              else could rust the heart more over time? Blackgold.</p>
+            <p class="mb-0">Por eso, desde CLIMB trabajamos en serio para formar profesionales con capacidad y creatividad para resolver los problemas reales de los recursos humanos</p>
           </div>
         </div>
       </div>
