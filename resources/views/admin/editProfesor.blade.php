@@ -24,7 +24,6 @@
 <body class="about-us bg-gray-200">
     @include('layouts.aside')
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
-
         <!-- -------- START HEADER 7 w/ text and video ------- -->
         <div class="container-fluid py-4">
             <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4">

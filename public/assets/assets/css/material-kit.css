@@ -20975,6 +20975,12 @@ fieldset:disabled .btn {
 .card-profile .rotating-card-container .front {
   text-align: left;
 }
+.card-profile:hover{
+
+  background-color: #344767 !important;
+  color:white !important;
+}
+
 
 .back-background .card-body {
   min-height: auto;
@@ -21192,7 +21198,7 @@ fieldset:disabled .btn {
 
 .dark-version .fc-theme-standard td,
 .dark-version .fc-theme-standard th {
-  border-color: rgba(, 128, 154, 0.3);
+  border-color: rgba( 128, 154, 0.3);
 }
 
 .dark-version .dataTable-sorter::after {

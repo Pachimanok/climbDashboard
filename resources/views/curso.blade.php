@@ -80,9 +80,12 @@
             @php echo $curso->descripcion @endphp
            {{--  <p class="text-white opacity-8 mb-0">{{ $curso->descripcion}}</p> --}}
           </div>
-        </div>
-        
-        
+        </div> 
+        <div class="row">
+          <div class="col-sm-3 mx-auto">
+            <a href="/comprar/create?id={{$curso->id}}" class="btn btn-primary">Comprar Curso</a>
+          </div>
+        </div>      
       </div>
     </section>
     <!-- -------- END Features w/ pattern background & stats & rocket -------- -->

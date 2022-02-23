@@ -36,7 +36,6 @@
  </div>           
 @endif
             @php
-                
                 if (isset($_GET['not'])) {
                     if ($_GET['not'] === 'deleteok') {
                         echo '<div class="alert alert-secondary text-white alert-dismissible fade show" role="alert">

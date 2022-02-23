@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\compra;
 use App\Models\curso;
 use App\Models\descargacurso;
 use Illuminate\Support\Facades\Route;
@@ -47,6 +48,15 @@ Route::get('/metodologia', function () {
 
 Route::resource('profesor','App\Http\Controllers\ProfesorController');
 Route::resource('cursos','App\Http\Controllers\CursoController');
+Route::resource('comprar','App\Http\Controllers\compraController');
+Route::get('/reintentar/{id}', function ($id) {
+
+    $compra = compra::find($id);
+    $curso = curso::find($compra->id_curso);
+    $monto = $compra->monto;
+
+    return view('pagar')->with('titulo',$curso->titulo)->with('monto',$monto)->with('id',$compra->id);
+});
 
 
 

@@ -49,7 +49,6 @@ class CursoController extends Controller
     {
         $curso = curso::find($curso->id);
         $profesor = profesor::find($curso->profesor_id);
-     
         $nombreRuta = 'cursos';
         return view('curso')->with('curso',$curso)->with('ruta',$nombreRuta)->with('profesor',$profesor->nombre);
 

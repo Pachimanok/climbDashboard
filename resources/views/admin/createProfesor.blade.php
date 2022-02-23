@@ -64,13 +64,13 @@
                             <div class="row">
                                 <div class="col-sm-10 mx-auto">
                                     <p class="text-lg mb-0">
-                                        <label for="introduccion">Introduccion/Descripcion Corta:</label>
-                                        <textarea id="editor" name="introduccion" placeholder="[Descripción se verá en la página y en la itroduccin del profesor]" required></textarea>
+                                        <label for="introduccion">Introducción/Descripcion Corta:</label>
+                                        <textarea id="editor" name="introduccion" placeholder="[Descripción se verá en la página y en la itroduccin del profesor]" ></textarea>
                                     </p>
                                     <br>
                                     <div class="text-sm mb-0" id="description">
                                         <label for="descripcion">Descripcion:</label>
-                                        <textarea id="descripcion"  name="descripcion" placeholder="[Descripción se verá en la página del profesor, abajo de la Introducción.]" required></textarea>
+                                        <textarea id="descripcion"  name="descripcion" placeholder="[Descripción se verá en la página del profesor, abajo de la Introducción.]" ></textarea>
                                        
                                     </div>
                                 </div>
