@@ -1,0 +1,27 @@
+.center-important{
+    text-align: center !important;
+}
+.acordion-titulo{
+
+   color: white;
+   border-bottom: 2px solid #383736 !important;
+
+}
+.acordion-cuerpo{
+
+    color: white;
+    text-align: left;
+    
+ 
+ }
+.acordion-titulo:hover{
+
+    color: #f7804b !important;
+    border-bottom: 2px solid #f7804b !important;
+
+}
+.accordion-button:not(.collapsed){
+    color: #f7804b !important;
+    border-bottom: 2px solid #f7804b !important;
+
+}

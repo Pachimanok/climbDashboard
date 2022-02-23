@@ -2,15 +2,15 @@
     mx-n3">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 text-start mb-0 mt-5">
-                <h3 class="text-white z-index-1 position-relative">Nuestros
-                    Profesores</h3>
-                <p class="text-white opacity-8 mb-0"> Nuestros profesores, son profesionales expertos en la gestión de Recursos Humanos, que buscan compartir saberes sin límites y sin reservas</p>
+            <div class="col-md-8 text-center mx-auto mb-0 mt-5">
+                <h3 class="text-white z-index-1 position-relative">Nuestros profesores, son profesionales expertos en la gestión de Recursos Humanos, que buscan compartir saberes sin límites y sin reservas</h3>
+                {{-- <p class="text-white opacity-8 mb-0"> Nuestros profesores, son profesionales expertos en la gestión de Recursos Humanos, que buscan compartir saberes sin límites y sin reservas</p> --}}
             </div>
-            <div class="col-sm-4 mb-0 mt-5 text-center">
+        </div>
+            <div class="col-sm-4 mx-auto mb-0 mt-5 text-center">
               
-                    <button type="button" class="btn btn-outline-light
-                    text-white mb-0 pl-2 pr-2 mt-2" style="padding-left: 5rem; padding-right: 5rem;">Ser
+                    <button type="button" class="btn btn-outline-info
+                    text-info mb-0 pl-2 pr-2 mt-2" style="padding-left: 5rem; padding-right: 5rem;">Ser
                     profe CLIMB</button>
                 
                 
